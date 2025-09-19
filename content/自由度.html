@@ -2,6 +2,7 @@
         <head>
         <title>cad2025_hw</title>
         <meta charset="utf-8">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -95,6 +96,7 @@ img.add_border {
 </head>
 <body>
 <div class='container'><nav>
+        
     <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -140,4 +142,86 @@ img.add_border {
           </div>
           
         </header>
-    </nav><section><h1>SMap</h1><div id="tipue_search_content"></div><ul><li><a href='About.html'>About</a><li><a href='Plotter.html'>Plotter</a><ul><li><a href='自由度.html'>自由度</a></li></ul><li><a href='Openduck.html'>Openduck</a></li></ul></section></div></body></html>
+    <div id="tipue_search_content">Plotter << <a href='Plotter.html'>Previous</a> <a href='Openduck.html'>Next</a> >> Openduck<br /><h1>自由度</h1>
+<p>平面機構的自由度推導:<br/><br/>要解釋 Grübler 公式（或稱 Kutzbach 公式）如何推導出來，需要從平面機構的運動學基本原理出發，逐步分析構件、自由度和約束的關係。以下是 Grübler 公式的推導過程，針對平面五連桿機構的自由度計算：<br/><br/>Grübler 公式</p>
+<p>平面機構的自由度公式為：</p>
+<p>\[<br/>DOF = 3(N - 1) - 2J_1 - J_2<br/>\]</p>
+<p>其中：</p>
+<p>\(DOF\)：機構的自由度。<br/>\(N\)：構件數（包括機架）。<br/>\(J_1\)：一自由度關節數（例如轉動軸或滑動軸）。<br/>\(J_2\)：二自由度關節數。<br/><br/>推導過程</p>
+<p>推導 Grübler 公式的核心是計算機構中所有構件的總自由度，然後減去關節施加的約束，得到淨自由度。<br/><br/>一、單一構件的自由度</p>
+<p>在平面運動中，每個獨立的構件（不與其他構件連接）有以下自由度：<br/>兩個平移自由度（沿 x 和 y 軸移動）。<br/>一個旋轉自由度（繞 z 軸旋轉，平面運動不考慮其他旋轉）。<br/>因此，每個構件的自由度為 3。<br/><br/>對於一個機構有 \(N\) 個構件（包括機架），總自由度為：</p>
+<p>\[<br/>3N<br/>\]<br/><br/>二、固定機架的影響</p>
+<p>機構通常有一個固定的構件（機架），其自由度完全被約束（即自由度為 0）。為了計算運動構件的自由度，我們從總構件數中減去機架：</p>
+<p>機架數量為 1，剩餘的運動構件數為 \(N - 1\)。<br/>但是，為了統一計算，我們先考慮所有構件的自由度，然後通過約束來減去自由度。<br/><br/>三、關節的約束</p>
+<p>關節（joint）限制了構件之間的相對運動，每個關節會減少一定的自由度：</p>
+<p>單一自由度關節（例如轉動副或滑動副）：這種關節允許一個自由度（例如只允許旋轉或只允許滑動），因此約束了 2 個自由度（因為每個構件原本有 3 個自由度，關節限制了其中 2 個）。</p>
+<p style="padding-left: 30px;">每個一自由度關節的約束數：\(3 - 1 = 2\)。</p>
+<p style="padding-left: 30px;">如果有 \(J_1\) 個一自由度關節，總約束為：\(2J_1\)。</p>
+<p>兩個自由度關節（例如平面關節，允許兩個平移或一個平移加一個旋轉）：這種關節只約束 1 個自由度。</p>
+<p style="padding-left: 30px;">每個二自由度關節的約束數：\(3 - 2 = 1\)。</p>
+<p style="padding-left: 30px;">如果有 \(J_2\) 個二自由度關節，總約束為：\(J_2\)。</p>
+<p>四、總自由度計算</p>
+<p>將所有構件的自由度減去關節的約束，得到機構的總自由度：</p>
+<p>\[<br/>DOF = 3N - (2J_1 + J_2)<br/>\]<br/><br/>五、考慮機架的固定</p>
+<p>機架作為一個構件，其自由度被完全約束（即 3 個自由度被移除）。因此，我們需要考慮機架的影響：<br/>機架固定相當於減去 1 個構件的自由度，即減去 \(3 \cdot 1 = 3\)。<br/>於是，公式調整為僅考慮運動構件的自由度：</p>
+<p>\[<br/>DOF = 3(N - 1) - (2J_1 + J_2)<br/>\]</p>
+<p>這就是 Grübler 公式的最終形式。<br/><br/>六、為什麼要減去機架的自由度？</p>
+<p>機架固定後，其 3 個自由度（2 個平移 + 1 個旋轉）被約束。<br/>這相當於從總自由度 \(3N\) 中減去機架的 \(3\)，因此使用 \(3(N - 1)\) 來表示運動構件的自由度。<br/><br/>應用到五連桿機構</p>
+<p>對於平面五連桿機構：</p>
+<p>\(N = 5\)（4 個運動連桿 + 1 個機架）。<br/>\(J_1 = 5\)（5 個轉動副）。<br/>\(J_2 = 0\)（無二自由度關節）。<br/><br/>代入公式：</p>
+<p>\[<br/>DOF = 3(5 - 1) - 2 \cdot 5 - 0 = 3 \cdot 4 - 10 = 12 - 10 = 2<br/>\]</p>
+<p>自由度為 2，符合五連桿機構的特性。<br/><br/>推導的關鍵假設</p>
+<p>一、平面運動：公式假設機構在二維平面內運動，每個構件有 3 個自由度。<br/>二、無冗餘約束：公式假設關節的約束是獨立的。如果機構有冗餘約束（例如平行四邊形結構），自由度可能需要進一步分析。<br/>三、關節類型：公式適用於常見的轉動對、滑動對等，若有特殊關節，需重新計算約束。<br/><br/>特殊情況的考慮</p>
+<p>如果機構有冗餘約束（例如某些連桿的運動被重複限制），Grübler 公式可能給出不正確的自由度（例如負值或零），這表示機構可能過約束或需要特殊分析。</p>
+<p>對於五連桿機構，若結構為閉環且無冗餘約束，自由度通常為 2，這與實際應用（如繪圖機或機械手臂）一致。</p>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><br />Plotter << <a href='Plotter.html'>Previous</a> <a href='Openduck.html'>Next</a> >> Openduck</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
