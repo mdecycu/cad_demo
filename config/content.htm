@@ -45,7 +45,7 @@
 <p><img alt="" height="259" src="/images/plotter_dimension_design.png" width="300"/></p>
 <p><a href="/downloads/plotter_dimension_design.slvs">plotter_dimension_design.slvs</a></p>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><h2>自由度</h2>
-<p>平面機構的自由度推導:<br/><br/>要解釋 Grübler 公式（或稱 Kutzbach 公式）如何推導出來，需要從平面機構的運動學基本原理出發，逐步分析構件、自由度和約束的關係。以下是 Grübler 公式的推導過程，針對平面五連桿機構的自由度計算：<br/><br/>Grübler 公式</p>
+<p>平面機構的自由度推導:<br/><br/>要解釋 <a href="https://en.wikipedia.org/wiki/Chebychev%E2%80%93Gr%C3%BCbler%E2%80%93Kutzbach_criterion">Grübler 公式</a>（或稱 Kutzbach 公式）如何推導出來，需要從平面機構的運動學基本原理出發，逐步分析構件、自由度和約束的關係。以下是 Grübler 公式的推導過程，針對平面五連桿機構的自由度計算：<br/><br/>Grübler 公式</p>
 <p>平面機構的自由度公式為：</p>
 <p>\[<br/>DOF = 3(N - 1) - 2J_1 - J_2<br/>\]</p>
 <p>其中：</p>
@@ -77,3 +77,11 @@
 <p>如果機構有冗餘約束（例如某些連桿的運動被重複限制），Grübler 公式可能給出不正確的自由度（例如負值或零），這表示機構可能過約束或需要特殊分析。</p>
 <p>對於五連桿機構，若結構為閉環且無冗餘約束，自由度通常為 2，這與實際應用（如繪圖機或機械手臂）一致。</p>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><h1>Openduck</h1>
+<p><a href="https://github.com/apirrone/Open_Duck_Mini">Open Duck Mini</a> 是一款模組化、開源的雙足仿生機器人平台，專為教育與研究設計，具備高自由度與低成本特性。</p>
+<p><img caption="false" height="298" src="/images/openduck_mini.png" width="200"/></p>
+<p>設計規格：</p>
+<ol>
+<li>使用 12 顆 <a href="https://www.feetechrc.com/74v-19-kgcm-plastic-case-metal-tooth-magnetic-code-double-axis-ttl-series-steering-gear.html">FeeTech STS3215</a> 伺服馬達（7.4V，19kg·cm 扭矩）+ 2 顆 <a href="https://www.amazon.com/dp/B0FJQZSFMS">Miuzei 9g 輔助伺服</a>，實現 14 個自由度（雙足腿部 10 DOF，頭頸 4 DOF），支援穩定步態、轉向與精確感測定位。</li>
+<li>機身採用 3D 列印（PLA 機身硬性結構/TPU 腳底軟性結構），尺寸約 42cm 高，總重約 1.0–1.3kg。</li>
+<li>控制單元為 <a href="https://www.taiwaniot.com.tw/product/raspberry-pi-zero-wh/">Raspberry Pi Zero WH</a>，支援 Wi-Fi/Bluetooth 與模組化感測器擴充（如 IMU、攝影機）。電源為 7.4V 2S（2 顆 <a href="https://www.taiwaniot.com.tw/product/panasonic-ncr18650ga-3450mah/">18650 電池</a>），峰值電流 4–7A。提供 <a href="https://cad.onshape.com/documents/64074dfcfa379b37d8a47762/w/3650ab4221e215a4f65eb7fe/e/0505c262d882183a25049d05">CAD</a>、韌體與原始碼，採開放授權，零件公開取得，BOM 總成本約$400 美元。</li>
+</ol>
