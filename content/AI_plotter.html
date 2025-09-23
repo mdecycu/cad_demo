@@ -2,7 +2,7 @@
         <head>
         <title>cad_demo</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -142,21 +142,16 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='Plotter.html'>Next</a> >> Plotter<br /><h1>About</h1>
-<p>課程名稱: 電腦輔助設計與實習</p>
-<p>課程評分:</p>
-<p style="padding-left: 30px;"><span style="background-color: #ffff00;">學習心得報告 (60%)</span> - MS Teams 線上參與，6人一組每三週發表學習心得。</p>
-<p style="padding-left: 60px;">w3、w7、w10、w14、w17、w18</p>
-<p style="padding-left: 60px;"><span style="background-color: #ffcc99;">學習心得報告主題</span>:</p>
-<p style="padding-left: 60px;">w3: 用什麼套件完成 <a href="https://youtu.be/iOLFP90DneY">5-bar Linkage Plotter</a> 與 <a href="https://mde.tw/cad2025/content/OpenDuck.html">Openduck mini</a> 零組件設計繪圖？ <a href="https://solvespace.com">Solvespace</a>, <a href="https://plm.sw.siemens.com/en-US/nx/cad-online/">Siemens NX</a>, <a href="https://www.onshape.com/en/">Onshape</a> 或其他？各有什麼優缺點？ (<a href="https://mde.tw/cad2025/downloads/plotter.7z">plotter.7z</a>, <a href="./../downloads/open_duck_mini.7z">open_duck_mini.7z</a>)</p>
-<p style="padding-left: 60px;">w7 (<span style="background-color: #ccffcc;">2a 採 Youtube 影片簡報</span>): <a href="https://youtu.be/iOLFP90DneY">5-bar Linkage Plotter</a> 與 <a href="https://mde.tw/cad2025/content/OpenDuck.html">Openduck mini</a> 零組件設計繪製完成之後，如何切割零件? 為何要切割零件？ 如何利用 <a href="https://cyberbotics.com/">Webots</a> 進行後續的控制系統設計與動態模擬 (Dynamic Simulation)？(<a href="https://mde.tw/cad2025/downloads/plotter_project.7z">plotter_project.7z</a>)</p>
-<p style="padding-left: 60px;">w10: <a href="https://cyberbotics.com/">Webots</a> 是什麼？有什麼特點？ 如何進行場景模擬？ 如何用 Python 進行控制系統設計？ (<a href="https://cyberbotics.com/doc/guide/tutorials">Tutorial</a>)</p>
-<p style="padding-left: 60px;">w14: <a href="https://cyberbotics.com/">Webots</a> 的模型有沒有辦法用程式方法建立? 有沒有辦法直接從 CAD 套件中轉出 <a href="https://cyberbotics.com/">Webots</a> 的場景模型？</p>
-<p style="padding-left: 60px;">w17: 如何實作一套 <a href="https://youtu.be/iOLFP90DneY">5-bar Linkage Plotter</a> 與 <a href="https://mde.tw/cad2025/content/OpenDuck.html">Openduck mini</a>？(<a href="https://la.disneyresearch.com/publication/design-and-control-of-a-bipedal-robotic-character/">Disney Bipedal Robot</a>)</p>
-<p style="padding-left: 60px;">w18: 課程總結</p>
-<p style="padding-left: 30px;"><span style="background-color: #ffff00;">個人與分組網站維護 (40%)</span> - 每週至少兩次推送與課程進度相關的學習內容與心得。</p>
-<p style="padding-left: 60px;">w9 期中自評、w18 期末自評</p>
-<br /> <a href='Plotter.html'>Next</a> >> Plotter</div>
+    <div id="tipue_search_content">自由度 << <a href='自由度.html'>Previous</a> <a href='Openduck.html'>Next</a> >> Openduck<br /><h1>AI_plotter</h1>
+<p><img alt="" height="259" src="./../images/plotter_dimension_design.png" width="300"/></p>
+<p>已知一個平面五連桿繪圖機購得兩個馬達的中心座標位於 (0,0), (200,0), 四根連桿長度皆為 160mm, 若 plotter 繪圖的座標點為 (x,y), (0,0) 位置上的馬達其轉角從正向 X 軸起算, 以逆時針方向為正, 其轉動角度為 t1, 而(200,0) 位置上的馬達其轉角也是從正向 X 軸起算, 也是以逆時針方向為正, 其轉動角度為 t2, 請利用 Python sympy 推導出以 x, y 為輸入變數, 求四組 t1 與 t2 作為輸出的逆向運動方程式。</p>
+<p><a href="./../downloads/plotter_sympy_inverse_kinematics.py">plotter_sympy_inverse_kinematics.py</a></p>
+<p>Solution 1:<br/><br/>\[<br/>t_{1} = 2 \operatorname{atan}{\left(\frac{320 y - \sqrt{- x^{4} - 2 x^{2} y^{2} + 102400 x^{2} - y^{4} + 102400 y^{2}}}{x^{2} + 320 x + y^{2}} \right)}<br/>\]<br/><br/>\[<br/>t_{2} = 2 \operatorname{atan}{\left(\frac{320 y - \sqrt{- x^{4} + 800 x^{3} - 2 x^{2} y^{2} - 137600 x^{2} + 800 x y^{2} - 8960000 x - y^{4} + 22400 y^{2} + 2496000000}}{x^{2} - 720 x + y^{2} + 104000} \right)}<br/>\]<br/><br/>Solution 2:<br/><br/>\[<br/>t_{1} = 2 \operatorname{atan}{\left(\frac{320 y - \sqrt{- x^{4} - 2 x^{2} y^{2} + 102400 x^{2} - y^{4} + 102400 y^{2}}}{x^{2} + 320 x + y^{2}} \right)}<br/>\]<br/><br/>\[<br/>t_{2} = 2 \operatorname{atan}{\left(\frac{320 y + \sqrt{- x^{4} + 800 x^{3} - 2 x^{2} y^{2} - 137600 x^{2} + 800 x y^{2} - 8960000 x - y^{4} + 22400 y^{2} + 2496000000}}{x^{2} - 720 x + y^{2} + 104000} \right)}<br/>\]<br/><br/>Solution 3:<br/><br/>\[<br/>t_{1} = 2 \operatorname{atan}{\left(\frac{320 y + \sqrt{- x^{4} - 2 x^{2} y^{2} + 102400 x^{2} - y^{4} + 102400 y^{2}}}{x^{2} + 320 x + y^{2}} \right)}<br/>\]<br/><br/>\[<br/>t_{2} = 2 \operatorname{atan}{\left(\frac{320 y - \sqrt{- x^{4} + 800 x^{3} - 2 x^{2} y^{2} - 137600 x^{2} + 800 x y^{2} - 8960000 x - y^{4} + 22400 y^{2} + 2496000000}}{x^{2} - 720 x + y^{2} + 104000} \right)}<br/>\]<br/><br/>Solution 4:<br/><br/>\[<br/>t_{1} = 2 \operatorname{atan}{\left(\frac{320 y + \sqrt{- x^{4} - 2 x^{2} y^{2} + 102400 x^{2} - y^{4} + 102400 y^{2}}}{x^{2} + 320 x + y^{2}} \right)}<br/>\]<br/><br/>\[<br/>t_{2} = 2 \operatorname{atan}{\left(\frac{320 y + \sqrt{- x^{4} + 800 x^{3} - 2 x^{2} y^{2} - 137600 x^{2} + 800 x y^{2} - 8960000 x - y^{4} + 22400 y^{2} + 2496000000}}{x^{2} - 720 x + y^{2} + 104000} \right)}<br/>\]</p>
+<p>上列符號式求解(Symbolic Formulation)與圖形法求解進行比較:</p>
+<p style="padding-left: 30px;">Plotter 到達點 (200, 230) 時的 t1 與 t2 角度（degree）:<br/><br/>Solution 1:</p>
+<p style="padding-left: 30px;">t1 = 66.72°</p>
+<p style="padding-left: 30px;">t2 = 45.95°</p>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><br />自由度 << <a href='自由度.html'>Previous</a> <a href='Openduck.html'>Next</a> >> Openduck</div>
         
     <!-- footer -->
       <div class="container">

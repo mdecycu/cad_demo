@@ -76,6 +76,15 @@
 <p>一、平面運動：公式假設機構在二維平面內運動，每個構件有 3 個自由度。<br/>二、無冗餘約束：公式假設關節的約束是獨立的。如果機構有冗餘約束（例如平行四邊形結構），自由度可能需要進一步分析。<br/>三、關節類型：公式適用於常見的轉動對、滑動對等，若有特殊關節，需重新計算約束。<br/><br/>特殊情況的考慮</p>
 <p>如果機構有冗餘約束（例如某些連桿的運動被重複限制），Grübler 公式可能給出不正確的自由度（例如負值或零），這表示機構可能過約束或需要特殊分析。</p>
 <p>對於五連桿機構，若結構為閉環且無冗餘約束，自由度通常為 2，這與實際應用（如繪圖機或機械手臂）一致。</p>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><h2>AI_plotter</h2>
+<p><img alt="" height="259" src="/images/plotter_dimension_design.png" width="300"/></p>
+<p>已知一個平面五連桿繪圖機購得兩個馬達的中心座標位於 (0,0), (200,0), 四根連桿長度皆為 160mm, 若 plotter 繪圖的座標點為 (x,y), (0,0) 位置上的馬達其轉角從正向 X 軸起算, 以逆時針方向為正, 其轉動角度為 t1, 而(200,0) 位置上的馬達其轉角也是從正向 X 軸起算, 也是以逆時針方向為正, 其轉動角度為 t2, 請利用 Python sympy 推導出以 x, y 為輸入變數, 求四組 t1 與 t2 作為輸出的逆向運動方程式。</p>
+<p><a href="/downloads/plotter_sympy_inverse_kinematics.py">plotter_sympy_inverse_kinematics.py</a></p>
+<p>Solution 1:<br/><br/>\[<br/>t_{1} = 2 \operatorname{atan}{\left(\frac{320 y - \sqrt{- x^{4} - 2 x^{2} y^{2} + 102400 x^{2} - y^{4} + 102400 y^{2}}}{x^{2} + 320 x + y^{2}} \right)}<br/>\]<br/><br/>\[<br/>t_{2} = 2 \operatorname{atan}{\left(\frac{320 y - \sqrt{- x^{4} + 800 x^{3} - 2 x^{2} y^{2} - 137600 x^{2} + 800 x y^{2} - 8960000 x - y^{4} + 22400 y^{2} + 2496000000}}{x^{2} - 720 x + y^{2} + 104000} \right)}<br/>\]<br/><br/>Solution 2:<br/><br/>\[<br/>t_{1} = 2 \operatorname{atan}{\left(\frac{320 y - \sqrt{- x^{4} - 2 x^{2} y^{2} + 102400 x^{2} - y^{4} + 102400 y^{2}}}{x^{2} + 320 x + y^{2}} \right)}<br/>\]<br/><br/>\[<br/>t_{2} = 2 \operatorname{atan}{\left(\frac{320 y + \sqrt{- x^{4} + 800 x^{3} - 2 x^{2} y^{2} - 137600 x^{2} + 800 x y^{2} - 8960000 x - y^{4} + 22400 y^{2} + 2496000000}}{x^{2} - 720 x + y^{2} + 104000} \right)}<br/>\]<br/><br/>Solution 3:<br/><br/>\[<br/>t_{1} = 2 \operatorname{atan}{\left(\frac{320 y + \sqrt{- x^{4} - 2 x^{2} y^{2} + 102400 x^{2} - y^{4} + 102400 y^{2}}}{x^{2} + 320 x + y^{2}} \right)}<br/>\]<br/><br/>\[<br/>t_{2} = 2 \operatorname{atan}{\left(\frac{320 y - \sqrt{- x^{4} + 800 x^{3} - 2 x^{2} y^{2} - 137600 x^{2} + 800 x y^{2} - 8960000 x - y^{4} + 22400 y^{2} + 2496000000}}{x^{2} - 720 x + y^{2} + 104000} \right)}<br/>\]<br/><br/>Solution 4:<br/><br/>\[<br/>t_{1} = 2 \operatorname{atan}{\left(\frac{320 y + \sqrt{- x^{4} - 2 x^{2} y^{2} + 102400 x^{2} - y^{4} + 102400 y^{2}}}{x^{2} + 320 x + y^{2}} \right)}<br/>\]<br/><br/>\[<br/>t_{2} = 2 \operatorname{atan}{\left(\frac{320 y + \sqrt{- x^{4} + 800 x^{3} - 2 x^{2} y^{2} - 137600 x^{2} + 800 x y^{2} - 8960000 x - y^{4} + 22400 y^{2} + 2496000000}}{x^{2} - 720 x + y^{2} + 104000} \right)}<br/>\]</p>
+<p>上列符號式求解(Symbolic Formulation)與圖形法求解進行比較:</p>
+<p style="padding-left: 30px;">Plotter 到達點 (200, 230) 時的 t1 與 t2 角度（degree）:<br/><br/>Solution 1:</p>
+<p style="padding-left: 30px;">t1 = 66.72°</p>
+<p style="padding-left: 30px;">t2 = 45.95°</p>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><h1>Openduck</h1>
 <p><a href="https://github.com/apirrone/Open_Duck_Mini">Open Duck Mini</a> 是一款模組化、開源的雙足仿生機器人平台，專為教育與研究設計，具備高自由度與低成本特性。</p>
 <p><img caption="false" height="298" src="/images/openduck_mini.png" width="200"/></p>
