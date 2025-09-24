@@ -2,6 +2,7 @@
         <head>
         <title>cad_demo</title>
         <meta charset="utf-8">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -95,6 +96,7 @@ img.add_border {
 </head>
 <body>
 <div class='container'><nav>
+        
     <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -140,4 +142,62 @@ img.add_border {
           </div>
           
         </header>
-    </nav><section><h1>SMap</h1><div id="tipue_search_content"></div><ul><li><a href='About.html'>About</a><li><a href='Plotter.html'>Plotter</a><ul><li><a href='自由度.html'>自由度</a><li><a href='AI_plotter.html'>AI_plotter</a><li><a href='P_webots.html'>P_webots</a></li></ul><li><a href='Openduck.html'>Openduck</a></li></ul></section></div></body></html>
+    <div id="tipue_search_content">AI_plotter << <a href='AI_plotter.html'>Previous</a> <a href='Openduck.html'>Next</a> >> Openduck<br /><h1>P_webots</h1>
+<p>兩種建立剛體的方法 url 給定 OBJ 或 STL 檔案所在相對位置:</p>
+<p style="padding-left: 30px;"><a href="https://cyberbotics.com/doc/reference/solid">Solid</a> - <a href="https://cyberbotics.com/doc/reference/shape">Shape</a> - <a href="https://cyberbotics.com/doc/reference/mesh">Mesh</a> - url</p>
+<p style="padding-left: 30px;"><a href="https://cyberbotics.com/doc/reference/cadshape">CadShape</a> - url</p>
+<p>利用 boundingObject 界定物件碰撞檢測範圍:</p>
+<p style="padding-left: 30px;">boundingObject USE shape</p>
+<p><a href="https://cyberbotics.com/doc/reference/solidreference">SolidReference</a> 設定於 link3 端點，且參照 link4_solid，表示第四旋轉軸既位於 link3，同時也必須位於 link4，讓 Webots 透過此一 closed chain 約束條件，於系統方程式運算時，能夠模擬封閉連桿機構的運動。</p>
+<p><img alt="" height="253" src="./../images/plotter_project_SolidReference.png" width="300"/></p>
+<p>從 <a href="https://cad.onshape.com/documents/9ebaa0fe12e0330fda26ad1a/w/7f1387b419b76633fa18bb67/e/0f3404b1684ff733f4127c25?renderMode=0&amp;uiState=68d292d7dfd536c40bf38d8d">Plotter in Onshape</a> 以 <a href="https://en.wikipedia.org/wiki/STL_(file_format)">STL</a> 格式轉出後，利用 <a href="./../downloads/plotter_onshape/cad/split_stl_to_obj_scale2_w_mtl.py">split_stl_to_obj_scale2_w_mtl.py</a>，以兩倍原始尺寸分割零件為 <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">OBJ</a> 格式後，轉進 Webots 建立第一階段的模擬場景: 僅 link1 轉動: <a href="./../downloads/plotter_onshape_link1.7z">plotter_onshape_link1.7z</a></p><br />AI_plotter << <a href='AI_plotter.html'>Previous</a> <a href='Openduck.html'>Next</a> >> Openduck</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
